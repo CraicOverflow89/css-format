@@ -13,12 +13,8 @@ class CSSFormatter:
         """
         if not os.path.exists(file) or not os.path.isfile(file):
             raise FileNotFoundError(errno.ENOENT, os.strerror(errno.ENOENT), file)
-        # TEMP DEBUG
-        print("READING FILE")
         with open(file, "r") as fs:
             result = CSSFormatter._format_str(fs.read())
-        print(result)
-        print("WRITING FILE")
         with open(file, "w") as fs:
             fs.write(result)
 
